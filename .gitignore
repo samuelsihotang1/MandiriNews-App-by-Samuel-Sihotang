@@ -1,3 +1,13 @@
+# Android Studio will place build artifacts here
+/windows
+/android
+/ios
+/web
+/test
+/macos
+/linux
+/belajar_flutter
+
 # Miscellaneous
 *.class
 *.log
@@ -36,20 +46,3 @@ app.*.symbols
 
 # Obfuscation related
 app.*.map.json
-
-# Android Studio will place build artifacts here
-/android/app/debug
-/android/app/profile
-/android/app/release
-/windows
-/android
-/android
-/android/app
-/android/app
-/ios
-/ios
-/web
-/test
-web/index.html
-/macos
-/ios
