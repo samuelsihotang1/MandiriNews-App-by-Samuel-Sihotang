@@ -1,10 +1,9 @@
+import 'package:NewsApp/components/customListTile.dart';
 import 'package:NewsApp/components/everythingList.dart';
 import 'package:NewsApp/models/topNews.model.dart';
 import 'package:NewsApp/providers/news.provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import 'components/customListTile.dart';
 
 void main() {
   runApp(MyApp());
@@ -32,6 +31,7 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     Provider.of<NewsProvider>(context, listen: false).getTopNews();
+    Provider.of<NewsProvider>(context, listen: false).getEverthingNews();
   }
 
   @override
@@ -58,57 +58,43 @@ class _HomePageState extends State<HomePage> {
         builder: (context, newsProvider, child) {
           if (newsProvider.isLoading) {
             return Center(child: CircularProgressIndicator(color: Colors.blue));
-          } else if (newsProvider.resNews != null) {
+          } else if (newsProvider.resNews != null &&
+              newsProvider.resEverythingNews != null) {
             List<Articles>? articles = newsProvider.resNews!.articles!;
-            return Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(
-                  child: ListView.builder(
-                    itemCount: articles.length,
-                    itemBuilder: (context, index) {
-                      if (index == 0) {
-                        return Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 16.0),
-                              child: Text(
-                                'Berita Terkini',
-                                textAlign: TextAlign.start,
-                                style: TextStyle(fontSize: 20),
-                              ),
-                            ),
-                            customListTile(articles[index], context),
-                          ],
-                        );
-                      } else {
-                        if (index == 1) {
-                          return Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 16.0),
-                                child: Text(
-                                  'Semua Berita',
-                                  textAlign: TextAlign.start,
-                                  style: TextStyle(fontSize: 20),
-                                ),
-                              ),
-                              everythingListTile(articles[index], context),
-                            ],
-                          );
-                        } else {
-                          return everythingListTile(articles[index], context);
-                        }
-                      }
-                    },
-                  ),
-                ),
-              ],
+            List<Articles>? everythingsArticles =
+                newsProvider.resEverythingNews!.articles!;
+            return ListView.builder(
+              itemCount: articles.length + everythingsArticles.length + 2,
+              itemBuilder: (context, index) {
+                if (index == 0) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    child: Text(
+                      'Berita Terkini',
+                      textAlign: TextAlign.start,
+                      style: TextStyle(fontSize: 20),
+                    ),
+                  );
+                } else if (index <= articles.length) {
+                  return customListTile(articles[index - 1], context);
+                } else if (index == articles.length + 1) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    child: Text(
+                      'Semua Berita',
+                      textAlign: TextAlign.start,
+                      style: TextStyle(fontSize: 20),
+                    ),
+                  );
+                } else {
+                  return everythingListTile(
+                      everythingsArticles[index - articles.length - 2],
+                      context);
+                }
+              },
             );
           } else {
-            return Center(child: Text("Failed to load news"));
+            return Center(child: CircularProgressIndicator(color: Colors.blue));
           }
         },
       ),
