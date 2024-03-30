@@ -16,12 +16,12 @@ Widget everythingListTile(Articles article, BuildContext context) {
       );
     },
     child: Container(
-      margin: EdgeInsets.all(12.0),
-      padding: EdgeInsets.all(8.0),
+      margin: const EdgeInsets.all(12.0),
+      padding: const EdgeInsets.all(8.0),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12.0),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             color: Colors.black12,
             blurRadius: 3.0,
@@ -43,42 +43,42 @@ Widget everythingListTile(Articles article, BuildContext context) {
               borderRadius: BorderRadius.circular(12.0),
             ),
           ),
-          SizedBox(width: 8.0),
+          const SizedBox(width: 8.0),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   article.title ?? 'No Title',
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 16.0,
                   ),
                 ),
-                SizedBox(height: 8.0),
+                const SizedBox(height: 8.0),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Row(
                       children: [
-                        Icon(Icons.account_circle, color: Colors.blue),
-                        SizedBox(width: 4.0),
+                        const Icon(Icons.account_circle, color: Colors.blue),
+                        const SizedBox(width: 4.0),
                         Text(
                           article.author ?? 'Unknown',
-                          style: TextStyle(color: Colors.blue),
+                          style: const TextStyle(color: Colors.blue),
                         ),
                       ],
                     ),
                     Row(
                       children: [
-                        Icon(Icons.calendar_today, color: Colors.blue),
-                        SizedBox(width: 4.0),
+                        const Icon(Icons.calendar_today, color: Colors.blue),
+                        const SizedBox(width: 4.0),
                         Text(
                           article.publishedAt != null
                               ? DateFormat('dd MMMM yyyy')
                                   .format(DateTime.parse(article.publishedAt!))
                               : 'Unknown',
-                          style: TextStyle(color: Colors.blue),
+                          style: const TextStyle(color: Colors.blue),
                         ),
                       ],
                     ),

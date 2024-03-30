@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class ArticlePage extends StatelessWidget {
   final Articles article;
 
-  ArticlePage({required this.article});
+  const ArticlePage({super.key, required this.article});
 
   @override
   Widget build(BuildContext context) {
@@ -28,28 +28,28 @@ class ArticlePage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12.0),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 8.0,
             ),
             Container(
-              padding: EdgeInsets.all(6.0),
+              padding: const EdgeInsets.all(6.0),
               decoration: BoxDecoration(
                 color: Colors.red,
                 borderRadius: BorderRadius.circular(30.0),
               ),
               child: Text(
                 article.source?.name ?? 'Unknown',
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.white,
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 8.0,
             ),
             Text(
               article.description ?? '',
-              style: TextStyle(
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 16.0,
               ),

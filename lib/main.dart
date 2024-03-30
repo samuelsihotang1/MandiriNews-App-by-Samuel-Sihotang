@@ -6,15 +6,17 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<NewsProvider>(
       create: (context) => NewsProvider(),
-      child: MaterialApp(
+      child: const MaterialApp(
         home: HomePage(),
       ),
     );
@@ -22,6 +24,8 @@ class MyApp extends StatelessWidget {
 }
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -39,7 +43,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Row(
+        title: const Row(
           children: <Widget>[
             CircleAvatar(
               radius: 20.0,
@@ -57,7 +61,8 @@ class _HomePageState extends State<HomePage> {
       body: Consumer<NewsProvider>(
         builder: (context, newsProvider, child) {
           if (newsProvider.isLoading) {
-            return Center(child: CircularProgressIndicator(color: Colors.blue));
+            return const Center(
+                child: CircularProgressIndicator(color: Colors.blue));
           } else if (newsProvider.resNews != null &&
               newsProvider.resEverythingNews != null) {
             List<Articles>? articles = newsProvider.resNews!.articles!;
@@ -67,8 +72,8 @@ class _HomePageState extends State<HomePage> {
               itemCount: articles.length + everythingsArticles.length + 2,
               itemBuilder: (context, index) {
                 if (index == 0) {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  return const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16.0),
                     child: Text(
                       'Berita Terkini',
                       textAlign: TextAlign.start,
@@ -78,8 +83,8 @@ class _HomePageState extends State<HomePage> {
                 } else if (index <= articles.length) {
                   return customListTile(articles[index - 1], context);
                 } else if (index == articles.length + 1) {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  return const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16.0),
                     child: Text(
                       'Semua Berita',
                       textAlign: TextAlign.start,
@@ -94,7 +99,8 @@ class _HomePageState extends State<HomePage> {
               },
             );
           } else {
-            return Center(child: CircularProgressIndicator(color: Colors.blue));
+            return const Center(
+                child: CircularProgressIndicator(color: Colors.blue));
           }
         },
       ),
