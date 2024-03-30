@@ -37,3 +37,4 @@ To run the Mandiri News App:
 2. Ensure you have Flutter installed on your machine.
 3. Navigate to the project directory and run `flutter pub get` to install dependencies.
 4. Run the app using `flutter run`.
+5. Build the app to be apk using `flutter build apk`.
