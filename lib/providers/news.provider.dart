@@ -1,6 +1,6 @@
-import 'package:NewsApp/helpers/api.dart';
-import 'package:NewsApp/models/topNews.model.dart';
-import 'package:NewsApp/utils/const.dart';
+import 'package:MandiriNews/helpers/api.dart';
+import 'package:MandiriNews/models/topNews.model.dart';
+import 'package:MandiriNews/utils/const.dart';
 import 'package:flutter/material.dart';
 
 class NewsProvider with ChangeNotifier {

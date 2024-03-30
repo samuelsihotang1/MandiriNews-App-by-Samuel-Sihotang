@@ -1,7 +1,7 @@
-import 'package:NewsApp/components/customListTile.dart';
-import 'package:NewsApp/components/everythingList.dart';
-import 'package:NewsApp/models/topNews.model.dart';
-import 'package:NewsApp/providers/news.provider.dart';
+import 'package:MandiriNews/components/customListTile.dart';
+import 'package:MandiriNews/components/everythingList.dart';
+import 'package:MandiriNews/models/topNews.model.dart';
+import 'package:MandiriNews/providers/news.provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

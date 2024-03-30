@@ -1,4 +1,4 @@
-import 'package:NewsApp/models/topNews.model.dart';
+import 'package:MandiriNews/models/topNews.model.dart';
 import 'package:flutter/material.dart';
 
 class ArticlePage extends StatelessWidget {

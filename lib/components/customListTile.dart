@@ -1,5 +1,5 @@
-import 'package:NewsApp/models/topNews.model.dart';
-import 'package:NewsApp/pages/articles_details_page.dart';
+import 'package:MandiriNews/models/topNews.model.dart';
+import 'package:MandiriNews/pages/articles_details_page.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -48,7 +48,7 @@ Widget customListTile(Articles article, BuildContext context) {
           Container(
             padding: EdgeInsets.all(6.0),
             child: Text(
-              article.title ?? 'No Title',  
+              article.title ?? 'No Title',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 16.0,

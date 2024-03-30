@@ -1,5 +1,5 @@
-import 'package:NewsApp/models/topNews.model.dart';
-import 'package:NewsApp/pages/articles_details_page.dart';
+import 'package:MandiriNews/models/topNews.model.dart';
+import 'package:MandiriNews/pages/articles_details_page.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
