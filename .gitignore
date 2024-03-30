@@ -1,12 +1,4 @@
 # Android Studio will place build artifacts here
-/windows
-/android
-/ios
-/web
-/test
-/macos
-/linux
-/belajar_flutter
 
 # Miscellaneous
 *.class
