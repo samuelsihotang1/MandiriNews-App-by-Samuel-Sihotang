@@ -1,3 +1,4 @@
+#### My Rakamin Profile : https://www.rakamin.com/profile/samuel-christy-angie-sihotang-5p7emngha7n1tz5b
 # Mandiri News App
 
 This Flutter application fetches news articles from an API and displays them in a user-friendly interface. Below is a breakdown of the code structure and its functionalities:
